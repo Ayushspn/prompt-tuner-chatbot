@@ -15,7 +15,7 @@ embedder = SentenceTransformer("all-MiniLM-L6-v2")
 
 # Step 3: ChromaDB Setup
 client = chromadb.Client()
-collection = client.create_collection("knowledge_base")
+collection = client.get_or_create_collection("knowledge_base")
 
 # Add documents with embeddings
 for i, doc in enumerate(docs):
